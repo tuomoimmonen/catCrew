@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         GameManager.onGameStateChanged += GameStateChangedCallback;
+        Application.targetFrameRate = 60;
     }
 
     private void OnDisable()
@@ -43,7 +44,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        Application.targetFrameRate = 60;
         //DEBUG REMOVE WHEN BUILD
         if (Input.GetKeyDown(KeyCode.R)) { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); }
         if(canMove)

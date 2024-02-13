@@ -73,7 +73,7 @@ public class Enemy : MonoBehaviour
     private void StartRunningTowardsTarget()
     {
         state = State.Running;
-        enemyAnim.SetTrigger("Run");
+        enemyAnim.SetTrigger("run");
     }
 
     private void RunTowardsTarget()

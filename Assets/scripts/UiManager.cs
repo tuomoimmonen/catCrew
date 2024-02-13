@@ -7,12 +7,16 @@ using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour
 {
+    [Header("Managers")]
+    [SerializeField] ShopManager shopManager;
+
     [Header("Elemenets")]
     [SerializeField] GameObject settingsPanel;
     [SerializeField] GameObject menuPanel;
     [SerializeField] GameObject gamePanel;
     [SerializeField] GameObject gameOverPanel;
     [SerializeField] GameObject levelCompletePanel;
+    [SerializeField] GameObject shopPanel;
     [SerializeField] Slider progressBar;
     [SerializeField] TMP_Text levelText;
     void Start()
@@ -22,6 +26,7 @@ public class UiManager : MonoBehaviour
         gameOverPanel.SetActive(false);
         levelCompletePanel.SetActive(false);
         settingsPanel.SetActive(false);
+        shopPanel.SetActive(false);
         levelText.text = "Level: " + (RoadManager.instance.GetLevel() + 1);
 
         GameManager.onGameStateChanged += GameStateCallback;
@@ -90,5 +95,18 @@ public class UiManager : MonoBehaviour
     public void HideSettingsPanel()
     {
         settingsPanel.SetActive(false);
+    }
+
+    public void ShowShop()
+    {
+        shopPanel.SetActive(true);
+        menuPanel.SetActive(false);
+        shopManager.UpdatePurchaseButton();
+    }
+
+    public void HideShop()
+    {
+        menuPanel.SetActive(true);
+        shopPanel.SetActive(false);
     }
 }
