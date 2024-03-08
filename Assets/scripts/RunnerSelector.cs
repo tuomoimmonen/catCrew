@@ -24,6 +24,7 @@ public class RunnerSelector : MonoBehaviour
             if(i == skinIndex)
             {
                 transform.GetChild(i).gameObject.SetActive(true);
+                runner.SetAnimator(transform.GetChild(i).GetComponent<Animator>());
             }
             else
             {

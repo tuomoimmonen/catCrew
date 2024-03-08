@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        
+        Application.targetFrameRate = 60;
     }
 
     void Update()
@@ -43,5 +43,10 @@ public class GameManager : MonoBehaviour
     public bool IsGameState()
     {
         return gameState == GameState.Game;
+    }
+
+    public bool IsLevelComplete()
+    {
+        return gameState == GameState.LevelComplete;
     }
 }

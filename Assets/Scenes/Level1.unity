@@ -206,7 +206,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 38.85
+  m_fontSize: 31.9
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1080,7 +1080,7 @@ Transform:
   m_GameObject: {fileID: 153801347}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1632,11 +1632,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2477575845379548691, guid: 202cd820b15d5934c8048e6048b42296,
-        type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 8cf0521ecaa157b43b707119fbfc575f, type: 2}
     - target: {fileID: 8409403151371984893, guid: 202cd820b15d5934c8048e6048b42296,
         type: 3}
       propertyPath: m_Name
@@ -1960,8 +1955,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.28978413, y: 0.000000036665142, z: -0.00000001110131, w: 0.95709205}
-  m_LocalPosition: {x: 0, y: 12, z: -12}
+  m_LocalRotation: {x: 0.28978413, y: -0.0000000091972145, z: 0.0000000027846923,
+    w: 0.95709205}
+  m_LocalPosition: {x: 0, y: 11.45, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5825,11 +5821,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2477575845379548691, guid: 202cd820b15d5934c8048e6048b42296,
-        type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 8cf0521ecaa157b43b707119fbfc575f, type: 2}
     - target: {fileID: 8409403151371984893, guid: 202cd820b15d5934c8048e6048b42296,
         type: 3}
       propertyPath: m_Name
@@ -6997,11 +6988,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2477575845379548691, guid: 202cd820b15d5934c8048e6048b42296,
-        type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 8cf0521ecaa157b43b707119fbfc575f, type: 2}
     - target: {fileID: 8409403151371984893, guid: 202cd820b15d5934c8048e6048b42296,
         type: 3}
       propertyPath: m_Name
@@ -7706,11 +7692,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2477575845379548691, guid: 202cd820b15d5934c8048e6048b42296,
-        type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 8cf0521ecaa157b43b707119fbfc575f, type: 2}
     - target: {fileID: 8409403151371984893, guid: 202cd820b15d5934c8048e6048b42296,
         type: 3}
       propertyPath: m_Name
@@ -8247,7 +8228,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 38.85
+  m_fontSize: 31.9
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -9264,8 +9245,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2067334161}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.28978413, y: 0.000000036665142, z: -0.00000001110131, w: 0.95709205}
-  m_LocalPosition: {x: 0, y: 12, z: -12}
+  m_LocalRotation: {x: 0.28978413, y: -0.0000000091972145, z: 0.0000000027846923,
+    w: 0.95709205}
+  m_LocalPosition: {x: 0, y: 11.45, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9487,11 +9469,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2477575845379548691, guid: 202cd820b15d5934c8048e6048b42296,
-        type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 8cf0521ecaa157b43b707119fbfc575f, type: 2}
     - target: {fileID: 8409403151371984893, guid: 202cd820b15d5934c8048e6048b42296,
         type: 3}
       propertyPath: m_Name
