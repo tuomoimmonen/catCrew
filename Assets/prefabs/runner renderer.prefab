@@ -7365,7 +7365,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6235331561642104736
 Transform:
   m_ObjectHideFlags: 0
@@ -8660,7 +8660,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7241287427477027657
 Transform:
   m_ObjectHideFlags: 0
@@ -9339,7 +9339,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8409403151371984893}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: fdd0597152daea44f98bbe288a68547c, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -9367,7 +9367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f7af656513616498af009ebc96db5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 5435709602601690208}
+  animator: {fileID: 3647375116846293299}
 --- !u!114 &1002639003403177517
 MonoBehaviour:
   m_ObjectHideFlags: 0

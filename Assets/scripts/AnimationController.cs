@@ -13,7 +13,10 @@ public class AnimationController : MonoBehaviour
 
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.M))
+        {
+            Idle();
+        }
     }
 
     public void Run()
@@ -22,8 +25,10 @@ public class AnimationController : MonoBehaviour
         {
             Transform runner = runnersParent.GetChild(i);
             Animator animator = runner.GetComponent<Runner>().GetAnimator();
+            animator.speed = UnityEngine.Random.Range(0.95f, 1.05f);
 
-            animator.SetTrigger("run");
+            //animator.SetTrigger("run"); //triggerit aktivoituu randomilla, ei toimi run->idle
+            animator.Play("cat9Run");
         }
     }
 
@@ -32,29 +37,38 @@ public class AnimationController : MonoBehaviour
         Debug.Log(runnersParent.childCount);
 
         int animatorsToIdle = runnersParent.childCount;
-
+        
         for (int i = 0; i < animatorsToIdle; i++)
         {
             Transform runner = runnersParent.GetChild(i);
             Animator animator = runner.GetComponent<Runner>().GetAnimator();
             Debug.Log(runner);
 
-            animator.SetTrigger("idle");
+            //animator.SetTrigger("idle"); //triggerit aktivoituu randomilla, ei toimi
+            animator.Play("cat9Idle");
         }
-
-        StartCoroutine(StartIdling(animatorsToIdle)); //guard for non idlers
     }
 
-    private IEnumerator StartIdling(int idleAnimators)
+    public void WinAnimation()
     {
-        yield return new WaitForSeconds(0.2f);
-        for (int i = 0; i < idleAnimators; i++)
+        for (int i = 0; i < runnersParent.childCount; i++)
         {
             Transform runner = runnersParent.GetChild(i);
             Animator animator = runner.GetComponent<Runner>().GetAnimator();
-
-            animator.SetTrigger("idle");
+            int randomAnim = Random.Range(0, 3);
+            animator.speed = Random.Range(1, 1.5f);
+            switch (randomAnim)
+            {
+                case 0:
+                    animator.Play("cat9WinDance");
+                    break;
+                case 1:
+                    animator.Play("cat9Win");
+                    break;
+                case 2:
+                    animator.Play("cat9WinClap");
+                    break;
+            }
         }
-
     }
 }

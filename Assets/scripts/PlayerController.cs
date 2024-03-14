@@ -60,9 +60,13 @@ public class PlayerController : MonoBehaviour
         {
             StartMoving();
         }
-        else if(state == GameManager.GameState.GameOver || state == GameManager.GameState.LevelComplete)
+        else if(state == GameManager.GameState.GameOver)
         {
             StopMoving();
+        }
+        else if(state == GameManager.GameState.LevelComplete)
+        {
+            StartCelebrating();
         }
     }
 
@@ -76,6 +80,12 @@ public class PlayerController : MonoBehaviour
     {
         canMove = false;
         animController.Idle();
+    }
+
+    private void StartCelebrating()
+    {
+        canMove = false;
+        animController.WinAnimation();
     }
 
     private void ForwardMovement()

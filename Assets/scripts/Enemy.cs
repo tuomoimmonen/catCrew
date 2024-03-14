@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
     [Header("Settings")]
     [SerializeField] float searchRadius;
     [SerializeField] float enemySpeed;
+    [SerializeField] float currentSpeed;
+    [SerializeField] float accelerationSpeed = 0.1f;
 
     [Header("Events")]
     public static Action onRunnerDie;
@@ -22,11 +24,11 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-        enemyAnim = GetComponent<Animator>();
+        enemyAnim = GetComponentInChildren<Animator>();
     }
     void Start()
     {
-        
+        enemyAnim.speed = UnityEngine.Random.Range(0.9f, 1.1f);
     }
 
     void Update()
@@ -73,7 +75,8 @@ public class Enemy : MonoBehaviour
     private void StartRunningTowardsTarget()
     {
         state = State.Running;
-        enemyAnim.SetTrigger("run");
+        Debug.Log(state.ToString());
+        enemyAnim.Play("bossRun");
     }
 
     private void RunTowardsTarget()
@@ -83,7 +86,8 @@ public class Enemy : MonoBehaviour
             return;
         }
 
-        transform.position = Vector3.MoveTowards(transform.position, targetRunner.position, enemySpeed * Time.deltaTime);
+        currentSpeed += enemySpeed * accelerationSpeed;
+        transform.position = Vector3.MoveTowards(transform.position, targetRunner.position, currentSpeed * Time.deltaTime);
 
         if (Vector3.Distance(transform.position, targetRunner.position) < 0.1f)
         {

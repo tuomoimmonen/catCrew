@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 718820822183615584}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -51,7 +51,7 @@ MonoBehaviour:
   enemyParents: {fileID: 3965284788483581740}
   enemyAmount: 5
   angle: 137.508
-  radius: 0.5
+  radius: 1
 --- !u!1 &4691566549285405385
 GameObject:
   m_ObjectHideFlags: 0
