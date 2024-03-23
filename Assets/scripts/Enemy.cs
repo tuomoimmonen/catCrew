@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
 
     [Header("Elements")]
     Animator enemyAnim;
+    [SerializeField] GameObject fightParticles;
 
     [Header("Settings")]
     [SerializeField] float searchRadius;
@@ -93,6 +94,7 @@ public class Enemy : MonoBehaviour
         {
             onRunnerDie?.Invoke();
             targetRunner.SetParent(null);
+            Instantiate(fightParticles, transform.position, Quaternion.identity);
             Destroy(targetRunner.gameObject);
             Destroy(gameObject);
         }

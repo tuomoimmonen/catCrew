@@ -25,6 +25,7 @@ public class RunnerSelector : MonoBehaviour
             {
                 transform.GetChild(i).gameObject.SetActive(true);
                 runner.SetAnimator(transform.GetChild(i).GetComponent<Animator>());
+                runner.SetParticleSystem(transform.GetChild(i).GetComponent<ParticleSystem>());
             }
             else
             {

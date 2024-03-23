@@ -6,6 +6,8 @@ public class Runner : MonoBehaviour
 {
     [Header("Elements")]
     [SerializeField] private Animator animator;
+    [SerializeField] ParticleSystem runParticles;
+
     [Header("Settings")]
     private bool isTarget;
 
@@ -27,6 +29,16 @@ public class Runner : MonoBehaviour
     public void SetAnimator(Animator selectedAnimator)
     {
         animator = selectedAnimator;
+    }
+
+    public ParticleSystem GetParticleSystem()
+    {
+        return runParticles;
+    }
+
+    public void SetParticleSystem(ParticleSystem selectedParticleSystem)
+    {
+        runParticles = selectedParticleSystem;
     }
 
 

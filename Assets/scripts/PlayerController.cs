@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [Header("Elements")]
     [SerializeField] CrowdSystem crowdSystem;
     [SerializeField] AnimationController animController;
+    [SerializeField] GameObject fireworks;
 
     [Header("Settings")]
     [SerializeField] float forwardSpeed = 1f;
@@ -68,6 +69,11 @@ public class PlayerController : MonoBehaviour
         {
             StartCelebrating();
         }
+    }
+
+    public void ShootFireWorks()
+    {
+        Instantiate(fireworks, transform.position, Quaternion.identity);
     }
 
     private void StartMoving()

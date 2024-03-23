@@ -8,6 +8,8 @@ public class CrowdSystem : MonoBehaviour
     [SerializeField] Transform runnersParent;
     [SerializeField] GameObject runnerPrefab;
     [SerializeField] AnimationController playerAnim;
+    [SerializeField] GameObject goodFireworks;
+    [SerializeField] GameObject badFireworks;
 
     [Header("Settings")]
     [SerializeField] float angle;
@@ -60,17 +62,21 @@ public class CrowdSystem : MonoBehaviour
         {
             case BonusType.Addition:
                 AddRunners(bonusAmount);
+                Instantiate(goodFireworks, transform.position, Quaternion.identity);
                 break;
             case BonusType.Multiplication:
                 int runnersToAdd = (runnersParent.childCount * bonusAmount) - runnersParent.childCount;
                 AddRunners(runnersToAdd);
+                Instantiate(goodFireworks, transform.position, Quaternion.identity);
                 break;
             case BonusType.Division:
                 int runnerToRemove = runnersParent.childCount - (runnersParent.childCount / bonusAmount);
                 RemoveRunners(runnerToRemove);
+                Instantiate(badFireworks, transform.position, Quaternion.identity);
                 break;
             case BonusType.Difference:
                 RemoveRunners(bonusAmount);
+                Instantiate(badFireworks, transform.position, Quaternion.identity);
                 break;
         }
     }
@@ -95,7 +101,7 @@ public class CrowdSystem : MonoBehaviour
 
         for (int i = runnersAmount - 1; i >= runnersAmount - amount; i--)
         {
-            Debug.Log(i);
+            //Debug.Log(i);
             Transform runnerToDestroy = runnersParent.GetChild(i);
             runnerToDestroy.SetParent(null);
             Destroy(runnerToDestroy.gameObject);

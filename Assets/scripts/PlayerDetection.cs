@@ -8,11 +8,16 @@ public class PlayerDetection : MonoBehaviour
 {
     [Header("Elements")]
     [SerializeField] CrowdSystem crowdSystem;
+    [SerializeField] Transform runnersParent;
+    [SerializeField] GameObject coinCollectEffect;
 
     [Header("Events")]
-
     public static Action onDoorsHit;
     public static Action onCoinCollected;
+
+    [Header("Settings")]
+    [SerializeField] int minCoinAmounToAdd;
+    [SerializeField] int maxCoinAmounToAdd;
     void Start()
     {
         
@@ -38,6 +43,7 @@ public class PlayerDetection : MonoBehaviour
                 BonusType bonusType = doors.GetBonusType(transform.position.x);
 
                 doors.Disable(); //disable doors to prevent multiple hits
+                //PlayerController.instance.ShootFireWorks();
 
                 crowdSystem.ApplyBonus(bonusType, bonusAmount);
                 //Debug.Log("door");
@@ -46,6 +52,9 @@ public class PlayerDetection : MonoBehaviour
             }
             else if (detectedColliders[i].tag == "Finish")
             {
+                int randomCoinAmount = UnityEngine.Random.Range(minCoinAmounToAdd, maxCoinAmounToAdd) * runnersParent.childCount;
+                DataManager.instance.AddCoins(randomCoinAmount);
+                //Debug.Log(randomCoinAmount.ToString());
                 //Debug.Log("finish");
                 PlayerPrefs.SetInt("level", PlayerPrefs.GetInt("level") + 1);
 
@@ -55,10 +64,10 @@ public class PlayerDetection : MonoBehaviour
 
             else if (detectedColliders[i].tag == "Coin")
             {
-                Destroy(detectedColliders[i].gameObject);
                 onCoinCollected?.Invoke();
+                Instantiate(coinCollectEffect, transform.position, Quaternion.identity);
+                Destroy(detectedColliders[i].gameObject);
                 DataManager.instance.AddCoins(1);
-                
             }
         }
     }

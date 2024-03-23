@@ -6,6 +6,7 @@ public class AnimationController : MonoBehaviour
 {
     [Header("Elements")]
     [SerializeField] Transform runnersParent;
+    ParticleSystem runParticles;
     void Start()
     {
 
@@ -26,7 +27,8 @@ public class AnimationController : MonoBehaviour
             Transform runner = runnersParent.GetChild(i);
             Animator animator = runner.GetComponent<Runner>().GetAnimator();
             animator.speed = UnityEngine.Random.Range(0.95f, 1.05f);
-
+            runParticles = runner.GetComponent<Runner>().GetParticleSystem();
+            runParticles.Play();
             //animator.SetTrigger("run"); //triggerit aktivoituu randomilla, ei toimi run->idle
             animator.Play("cat9Run");
         }
@@ -34,7 +36,7 @@ public class AnimationController : MonoBehaviour
 
     public void Idle()
     {
-        Debug.Log(runnersParent.childCount);
+        //Debug.Log(runnersParent.childCount);
 
         int animatorsToIdle = runnersParent.childCount;
         
@@ -42,7 +44,9 @@ public class AnimationController : MonoBehaviour
         {
             Transform runner = runnersParent.GetChild(i);
             Animator animator = runner.GetComponent<Runner>().GetAnimator();
-            Debug.Log(runner);
+            runParticles = runner.GetComponent<Runner>().GetParticleSystem();
+            runParticles.Stop();
+            //Debug.Log(runner);
 
             //animator.SetTrigger("idle"); //triggerit aktivoituu randomilla, ei toimi
             animator.Play("cat9Idle");
@@ -55,6 +59,8 @@ public class AnimationController : MonoBehaviour
         {
             Transform runner = runnersParent.GetChild(i);
             Animator animator = runner.GetComponent<Runner>().GetAnimator();
+            runParticles = runner.GetComponent<Runner>().GetParticleSystem();
+            runParticles.Stop();
             int randomAnim = Random.Range(0, 3);
             animator.speed = Random.Range(1, 1.5f);
             switch (randomAnim)

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7309728962857677668}
   - component: {fileID: 8821728763764218335}
+  - component: {fileID: 1278504725695937983}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Coin
@@ -25,14 +26,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4581228881943462948}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3631492091651394723}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!65 &8821728763764218335
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -54,6 +55,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0609655, y: 1.0658426, z: 0.29036185}
   m_Center: {x: -0.003657937, y: -0.0012192726, z: -0.020728245}
+--- !u!114 &1278504725695937983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4581228881943462948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d161ed949984ae4b91e092a7f04cf21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minRotationSpeed: 70
+  maxRotationSpeed: 170
+  coinCollectEffect: {fileID: 1800299774759831593, guid: ecaf4c551c001f44083c9ab55e310671,
+    type: 3}
 --- !u!1 &6549315756709302480
 GameObject:
   m_ObjectHideFlags: 0
@@ -80,13 +97,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6549315756709302480}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.224}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7309728962857677668}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6601675239913654100
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -94,7 +111,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6549315756709302480}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 29200163980446410, guid: cbde5491b23b87f46ba703ce23a7085c, type: 3}
 --- !u!23 &5965003526098947445
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -117,7 +134,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e627afc42267c11498b8413b905135fe, type: 2}
+  - {fileID: 2100000, guid: a078861ccc281294e84f768215dd5701, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

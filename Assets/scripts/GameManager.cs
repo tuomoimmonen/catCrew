@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
             return;
         }
         instance = this;
+
     }
     void Start()
     {
@@ -29,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
     public void SetGameState(GameState gameState)
@@ -37,7 +39,7 @@ public class GameManager : MonoBehaviour
         this.gameState = gameState;
         onGameStateChanged?.Invoke(gameState); //prevent errors if noone subscribed
 
-        Debug.Log("gamestate changed: " + gameState);
+        //Debug.Log("gamestate changed: " + gameState);
     }
 
     public bool IsGameState()

@@ -74,8 +74,7 @@ public class UiManager : MonoBehaviour
 
     private void ShowLevelCompletePanel()
     {
-        gamePanel.SetActive(false);
-        levelCompletePanel.SetActive(true);
+        StartCoroutine(WaitBeforeShowingCompletePanel());
     }
 
     public void UpdateProgressBar()
@@ -108,5 +107,18 @@ public class UiManager : MonoBehaviour
     {
         menuPanel.SetActive(true);
         shopPanel.SetActive(false);
+    }
+
+    private IEnumerator WaitBeforeShowingCompletePanel()
+    {
+        yield return new WaitForSeconds(1.5f);
+        gamePanel.SetActive(false);
+        levelCompletePanel.SetActive(true);
+    }
+
+    public void ResetAllData()
+    {
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
