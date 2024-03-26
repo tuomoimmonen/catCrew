@@ -76,7 +76,7 @@ public class Enemy : MonoBehaviour
     private void StartRunningTowardsTarget()
     {
         state = State.Running;
-        Debug.Log(state.ToString());
+        //Debug.Log(state.ToString());
         enemyAnim.Play("bossRun");
     }
 

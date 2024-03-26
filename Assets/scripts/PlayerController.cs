@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //DEBUG REMOVE WHEN BUILD
-        if (Input.GetKeyDown(KeyCode.R)) { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); }
+        //if (Input.GetKeyDown(KeyCode.R)) { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); }
         if(canMove)
         {
             ForwardMovement();

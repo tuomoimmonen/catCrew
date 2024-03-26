@@ -12032,7 +12032,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2130107799328079386
 Transform:
   m_ObjectHideFlags: 0
@@ -25118,7 +25118,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5147424356273322215
 Transform:
   m_ObjectHideFlags: 0
@@ -47285,7 +47285,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: -6686845889267545192, guid: 257a4fbf54c090a4c835b4d58f2cf545, type: 3}
+  m_Mesh: {fileID: -1713790798379156331, guid: d9125761470b1274d88e17f1ce0f0ef4, type: 3}
   m_Bones:
   - {fileID: 7256597051449568735}
   - {fileID: 691025986285271328}
@@ -47775,8 +47775,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f7af656513616498af009ebc96db5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 1265370734224515741}
-  runParticles: {fileID: 1155571589289369027}
+  animator: {fileID: 5435709602601690208}
+  runParticles: {fileID: 6010277751328659202}
 --- !u!114 &1002639003403177517
 MonoBehaviour:
   m_ObjectHideFlags: 0
